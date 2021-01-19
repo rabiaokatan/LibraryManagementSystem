@@ -15,6 +15,8 @@ namespace LibraryManagementApp.Data
         }
         public DbSet<Book> Book { get; set; }
         public DbSet<Book> Author { get; set; }
+
+        public DbSet<BookRequest> BookRequests { get; set; }
         public DbSet<Book> User { get; set; }
         public DbSet<LibraryManagementApp.Models.Author> Author_1 { get; set; }
     }

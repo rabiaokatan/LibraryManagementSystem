@@ -193,3 +193,8 @@ C:\Users\rabia\source\repos\LibraryManagementApp\LibraryManagementApp\obj\Debug\
 C:\Users\rabia\source\repos\LibraryManagementApp\LibraryManagementApp\obj\Debug\netcoreapp3.1\Razor\Views\Author\Details.cshtml.g.cs
 C:\Users\rabia\source\repos\LibraryManagementApp\LibraryManagementApp\obj\Debug\netcoreapp3.1\Razor\Views\Author\Edit.cshtml.g.cs
 C:\Users\rabia\source\repos\LibraryManagementApp\LibraryManagementApp\obj\Debug\netcoreapp3.1\Razor\Views\Author\Index.cshtml.g.cs
+C:\Users\rabia\source\repos\LibraryManagementApp\LibraryManagementApp\obj\Debug\netcoreapp3.1\Razor\Views\BookRequest\Create.cshtml.g.cs
+C:\Users\rabia\source\repos\LibraryManagementApp\LibraryManagementApp\obj\Debug\netcoreapp3.1\Razor\Views\BookRequest\Delete.cshtml.g.cs
+C:\Users\rabia\source\repos\LibraryManagementApp\LibraryManagementApp\obj\Debug\netcoreapp3.1\Razor\Views\BookRequest\Details.cshtml.g.cs
+C:\Users\rabia\source\repos\LibraryManagementApp\LibraryManagementApp\obj\Debug\netcoreapp3.1\Razor\Views\BookRequest\Edit.cshtml.g.cs
+C:\Users\rabia\source\repos\LibraryManagementApp\LibraryManagementApp\obj\Debug\netcoreapp3.1\Razor\Views\BookRequest\Index.cshtml.g.cs
