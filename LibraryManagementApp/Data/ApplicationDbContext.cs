@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using LibraryManagementApp.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,9 @@ namespace LibraryManagementApp.Data
             : base(options)
         {
         }
+        public DbSet<Book> Book { get; set; }
+        public DbSet<Book> Author { get; set; }
+        public DbSet<Book> User { get; set; }
+        public DbSet<LibraryManagementApp.Models.Author> Author_1 { get; set; }
     }
 }

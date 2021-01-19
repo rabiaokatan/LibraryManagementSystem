@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,14 +15,20 @@ namespace LibraryManagementApp.Models
         Cookbook,
         Biography,
         Authobiography,
+        [Display(Name = "Short Story")]
         ShortStory,
+        [Display(Name = "Science Fiction")]
         ScienceFiction,
+        [Display(Name = "Historical Fiction")]
+        HistoricalFiction,
+        [Display(Name = "Philosophical Fiction")]
+        PhilosophicalFiction,
         Romance,
         Horror,
-        HictoricalFiction,
         Fantasy,
         Mystery,
         Adventure,
+        [Display(Name = "Comic Book")]
         ComicBook
 
     }
