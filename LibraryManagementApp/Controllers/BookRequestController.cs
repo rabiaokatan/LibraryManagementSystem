@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LibraryManagementApp.Data;
 using LibraryManagementApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LibraryManagementApp.Controllers
 {
+    [Authorize]
     public class BookRequestController : Controller
     {
         private readonly ApplicationDbContext _context;

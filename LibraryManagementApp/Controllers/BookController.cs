@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LibraryManagementApp.Data;
 using LibraryManagementApp.Models;
+using LibraryManagementApp.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LibraryManagementApp.Controllers
 {
+    
     public class BookController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -45,6 +48,7 @@ namespace LibraryManagementApp.Controllers
             return View(book);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Book/Create
         public IActionResult Create()
         {
@@ -57,6 +61,7 @@ namespace LibraryManagementApp.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Id,Title,ISBN,BookShelf,AuthorId,BookGenre")] Book book)
         {
             if (ModelState.IsValid)
@@ -70,6 +75,7 @@ namespace LibraryManagementApp.Controllers
         }
 
         // GET: Book/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -91,6 +97,7 @@ namespace LibraryManagementApp.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ISBN,BookShelf,AuthorId,BookGenre")] Book book)
         {
             if (id != book.Id)
@@ -123,6 +130,7 @@ namespace LibraryManagementApp.Controllers
         }
 
         // GET: Book/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -144,6 +152,7 @@ namespace LibraryManagementApp.Controllers
         // POST: Book/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var book = await _context.Book.FindAsync(id);

@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LibraryManagementApp.Data;
 using LibraryManagementApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LibraryManagementApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AuthorController : Controller
     {
         private readonly ApplicationDbContext _context;
