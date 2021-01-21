@@ -10,9 +10,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style=" background-color: #6D4C41">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Library Management System</a>
+                <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">Library Management System</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -21,24 +21,24 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         @if (User.IsInRole(Roles.Admin))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Author" asp-action="Index">Author</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Author" asp-action="Index">Author</a>
                             </li>
                         }
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="Index">Book</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Book" asp-action="Index">Book</a>
                         </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="BookRequest" asp-action="Index">Book Request</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="BookRequest" asp-action="Index">Book Request</a>
                             </li>
                         @if (User.IsInRole(Roles.Admin))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Assign Another Admin</a>
+                                <a class="nav-link text-light" id="register" asp-area="Identity" asp-page="/Account/Register">Assign Another Admin</a>
                             </li>
                         }
                     </ul>
