@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace LibraryManagementApp.Controllers
 {
-    
+   // [Authorize(Roles = "Admin,Executive")]
     public class BookController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -48,8 +48,9 @@ namespace LibraryManagementApp.Controllers
             return View(book);
         }
 
-        [Authorize(Roles = "Admin")]
+
         // GET: Book/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewData["AuthorId"] = new SelectList(_context.Set<Author>(), "Id", "FullName");
