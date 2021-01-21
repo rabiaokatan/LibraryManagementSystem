@@ -29,22 +29,19 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Author" asp-action="Index">Author</a>
                             </li>
                         }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="Index">Book</a>
+                        </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="Index">Book</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="BookRequest" asp-action="Index">Book Request</a>
                             </li>
-                            @if (User.IsInRole(Roles.Admin) || User.IsInRole(Roles.Executive))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="BookRequest" asp-action="Index">Book Request</a>
-                                </li>
-                            }
-                            @if (User.IsInRole(Roles.Admin))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Assign Another Admin</a>
-                                </li>
-                            }
-                        </ul>
+                        @if (User.IsInRole(Roles.Admin))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Assign Another Admin</a>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
         </nav>

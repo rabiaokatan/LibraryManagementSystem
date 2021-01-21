@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<LibraryManagementApp.Models.Book>
+@using LibraryManagementApp.Helpers
 
 @{
     ViewData["Title"] = "Books";
@@ -7,7 +8,10 @@
 <h1>Books</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    @if (User.IsInRole(Roles.Admin))
+    {
+        <a asp-action="Create">Create New</a>
+    }
 </p>
 <table class="table">
     <thead>
@@ -31,29 +35,36 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ISBN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BookShelf)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BookGenre)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ISBN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookShelf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookGenre)
+                </td>
+                <td>
+                    @if (User.IsInRole(Roles.Admin))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    }
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    @if (User.IsInRole(Roles.Admin))
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
