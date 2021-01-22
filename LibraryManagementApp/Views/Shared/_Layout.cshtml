@@ -23,24 +23,27 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        @if (User.IsInRole(Roles.Admin))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Author" asp-action="Index">Author</a>
-                            </li>
-                        }
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Book" asp-action="Index">Book</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Menu
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item text-dark" asp-area="" asp-controller="Book" asp-action="Index">Books</a>
+                                @if (User.IsInRole(Roles.Admin))
+                                {
+                                    <a class="dropdown-item text-dark" asp-area="" asp-controller="Author" asp-action="Index">Author</a>
+                                }
+                                <a class="dropdown-item text-dark" asp-area="" asp-controller="BookRequest" asp-action="Index">Book Request</a>
+                                @if (User.IsInRole(Roles.Admin))
+                                {
+
+                                    <a class="dropdown-item text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Assign Another Admin</a>
+
+                                }
+
+                            </div>
                         </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="BookRequest" asp-action="Index">Book Request</a>
-                            </li>
-                        @if (User.IsInRole(Roles.Admin))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-light" id="register" asp-area="Identity" asp-page="/Account/Register">Assign Another Admin</a>
-                            </li>
-                        }
                     </ul>
                 </div>
             </div>

@@ -13,6 +13,15 @@
         <a asp-action="Create">Create New</a>
     }
 </p>
+
+<form method="get" asp-action="Index">
+    <p>
+        <input type="search" placeholder="Enter a book name" value="@ViewData["Getbooks"]" name="bsearch" style="width:500px;" />
+        <button class="btn text-light" style="background-color: #6D4C41" id="ApplyTextSearchButton">Search</button>
+        <a asp-action="Index"> | List All Books</a>
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -56,11 +65,10 @@
                 <td>
                     @if (User.IsInRole(Roles.Admin))
                     {
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                    }
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-                    @if (User.IsInRole(Roles.Admin))
-                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit | </a>
+
+                        <a asp-action="Details" asp-route-id="@item.Id">Details | </a>
+
                         <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                     }
                 </td>

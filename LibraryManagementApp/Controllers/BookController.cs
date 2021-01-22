@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace LibraryManagementApp.Controllers
 {
-   // [Authorize(Roles = "Admin,Executive")]
     public class BookController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -23,13 +22,28 @@ namespace LibraryManagementApp.Controllers
         }
 
         // GET: Book
-        public async Task<IActionResult> Index()
+        
+        /*public /*async Task<IActionResult>IActionResult Index()
         {
             var applicationDbContext = _context.Book.Include(b => b.Author);
-            return View(await applicationDbContext.ToListAsync());
+            return View(/*await applicationDbContext.ToListAsync());
         }
-
+       */
+        //For searchbar:
+       [HttpGet]
+        public async Task<IActionResult> Index(string bsearch)
+        {
+            ViewData["Getbooks"] = bsearch;
+            var query = from x in _context.Book.Include(b => b.Author) select x;
+            if (!string.IsNullOrEmpty(bsearch))
+            {
+                query = query.Where(x => x.Title.Contains(bsearch));
+            }
+            return View(await query.AsNoTracking().ToListAsync());
+        }
+        //
         // GET: Book/Details/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -161,7 +175,7 @@ namespace LibraryManagementApp.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
+       
         private bool BookExists(int id)
         {
             return _context.Book.Any(e => e.Id == id);
