@@ -23,6 +23,10 @@ namespace LibraryManagementApp.Models
         HistoricalFiction,
         [Display(Name = "Philosophical Fiction")]
         PhilosophicalFiction,
+        [Display(Name = "Literary Fiction")]
+        LiteraryFiction,
+        [Display(Name = "Realist Novel")]
+        RealistNovel,
         Romance,
         Horror,
         Fantasy,
