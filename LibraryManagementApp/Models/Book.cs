@@ -11,7 +11,6 @@ namespace LibraryManagementApp.Models
         public int Id { get; set; }
         public string Title { get; set; }
 
-        //[StringLength(18, MinimumLength = 13, ErrorMessage = "ISBN must be 13 characters")]
         //[RegularExpression("([0-9]{10}|[0-9]{13})", ErrorMessage = "Invalid ISBN")]
         public string ISBN { get; set; }
 

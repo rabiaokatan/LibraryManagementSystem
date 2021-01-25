@@ -8,8 +8,6 @@ namespace LibraryManagementApp.Models
 {
     public class ApplicationUser
     {
-        public string RoleName { get; set; }
-
         [NotMapped]
         public bool IsAdmin { get; set; }
     }

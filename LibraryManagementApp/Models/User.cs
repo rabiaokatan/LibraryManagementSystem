@@ -9,7 +9,6 @@ namespace LibraryManagementApp.Models
 {
     public class User: IdentityUser
     {
-        //public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
 
@@ -17,7 +16,5 @@ namespace LibraryManagementApp.Models
         [DataType(DataType.Date)]
         public DateTime Birthday { get; set; }
 
-       /* [EmailAddress(ErrorMessage ="{0} invalid e-mail address")]
-        public string Email { get; set; }*/
     }
 }

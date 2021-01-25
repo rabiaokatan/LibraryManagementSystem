@@ -1,4 +1,6 @@
-﻿using LibraryManagementApp.Models;
+﻿using LibraryManagementApp.Helpers;
+using LibraryManagementApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;

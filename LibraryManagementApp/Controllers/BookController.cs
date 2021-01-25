@@ -21,14 +21,6 @@ namespace LibraryManagementApp.Controllers
             _context = context;
         }
 
-        // GET: Book
-        
-        /*public /*async Task<IActionResult>IActionResult Index()
-        {
-            var applicationDbContext = _context.Book.Include(b => b.Author);
-            return View(/*await applicationDbContext.ToListAsync());
-        }
-       */
         //For searchbar:
        [HttpGet]
         public async Task<IActionResult> Index(string bsearch)

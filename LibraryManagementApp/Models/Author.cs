@@ -13,7 +13,6 @@ namespace LibraryManagementApp.Models
 
         public string FullName
         {
-
             get
             {
                 return Name + " " + Surname;
